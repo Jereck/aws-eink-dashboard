@@ -15,7 +15,7 @@ def get_costs():
     """Fetch AWS costs (yesterday + month-to-date)"""
     client = boto3.client("ce", region_name=AWS_REGION)
 
-    end = datetime.utcnow.date()
+    end = datetime.utcnow().date()
     start = (end - timedelta(days=1)).strftime("%Y-%m-%d")
     end_str = end.strftime("%Y-%m-%d")
 
