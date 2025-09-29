@@ -51,6 +51,8 @@ def get_ec2_instance_count():
     return count
 
 def update_display(epd):
+    epd.init()
+    epd.Clear(0xFF)
     """Render AWS info onto the e-ink screen."""
     # Gather data
     yesterday_cost, month_cost = get_costs()
@@ -80,7 +82,6 @@ def update_display(epd):
 
 def main():
     epd = epd2in13_V4.EPD()
-    epd.Clear(0xFF)
 
     while True:
         try:
