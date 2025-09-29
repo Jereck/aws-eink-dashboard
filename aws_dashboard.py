@@ -80,7 +80,6 @@ def update_display(epd):
 
 def main():
     epd = epd2in13_V4.EPD()
-    epd.init(epd.FULL_UPDATE)
     epd.Clear(0xFF)
 
     while True:
